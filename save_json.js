@@ -7,7 +7,7 @@ const save = async (favNumber) => {
   console.log("saving");
   await s3
     .putObject({
-      Body: JSON.stringify(favNumber, null, 2),
+      Body: JSON.stringify({ favoriteNumber: favNumber }),
       Bucket: "cyclic-shiny-plum-cow-us-east-2",
       Key: "number.json",
     })

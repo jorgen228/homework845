@@ -1,5 +1,6 @@
 const { Router } = require("express");
 const { save } = require("../save_json");
+require("dotenv").config();
 let favouriteNumber = require("../number.json");
 const add = require("../add");
 const AWS = require("aws-sdk");
