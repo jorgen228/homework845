@@ -16,7 +16,6 @@ router.get("/sum/:number1/:number2", async (req, res) => {
     })
     .promise();
   const favNumber = JSON.parse(my_file.Body)?.favouriteNumber;
-  console.log(favNumber);
   const { number1, number2 } = req.params;
   if (number1 == null || number2 == null) {
     res.status(400).send("Not provided numbers");
@@ -46,9 +45,7 @@ router.post("/favNumber", async (req, res) => {
     res.status(400).send("The number needs to be integer");
     return;
   }
-  await save({
-    favouriteNumber: number,
-  });
+  await save(number);
   res.json({
     status: "success",
     newFavouriteNumber: number,
