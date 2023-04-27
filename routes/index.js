@@ -15,7 +15,7 @@ router.get("/sum/:number1/:number2", async (req, res) => {
       Key: "favoriteNumber",
     })
     .promise();
-  const favNumber = JSON.parse(my_file.Body)?.favouriteNumber;
+  const favNumber = JSON.parse(my_file.Body)?.favoriteNumber;
   const { number1, number2 } = req.params;
   if (number1 == null || number2 == null) {
     res.status(400).send("Not provided numbers");
