@@ -9,7 +9,7 @@ const save = async (favNumber) => {
     .putObject({
       Body: JSON.stringify({ favoriteNumber: favNumber }),
       Bucket: "cyclic-shiny-plum-cow-us-east-2",
-      Key: "number.json",
+      Key: "favoriteNumber",
     })
     .promise();
 };
